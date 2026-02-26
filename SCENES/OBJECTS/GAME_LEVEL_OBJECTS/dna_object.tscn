@@ -99,7 +99,7 @@ object_name = "DNA"
 position = Vector2(-2.525866, 3.9513142)
 shape = SubResource("RectangleShape2D_qx3aw")
 
-[node name="OBJECT_DROP_AREA" parent="." unique_id=1218301490 instance=ExtResource("6_0sqjq")]
+[node name="OBJECT_DROP_AREA" parent="." unique_id=1218301490 groups=["promoter_region"] instance=ExtResource("6_0sqjq")]
 position = Vector2(-1228, 6)
 drop_area_name = "PROMOTER REGINO"
 accepted_object_name = "RNAP2"

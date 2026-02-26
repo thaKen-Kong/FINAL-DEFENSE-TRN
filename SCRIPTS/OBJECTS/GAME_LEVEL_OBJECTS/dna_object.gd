@@ -93,6 +93,7 @@ func _instantiate_minigame(node : Node):
 			child.minigame_success.connect(_phase_completed)
 		if child is BASE_PARING_MINIGAME:
 			child.minigame_success.connect(_phase_completed)
+			npc_tut()
 
 # -------------
 # PHASES
@@ -230,23 +231,33 @@ func _phase_completed(phase_name : String):
 		"PRE_INITIATION":
 			phase = PHASES.INIT
 			is_pre_initation = true
+			npc_tut()
 		"INITIATION":
 			phase = PHASES.ELONGATION
 			is_initiation = true
 			_promoter()
+			npc_tut()
 		"ELONGATION":
 			phase = PHASES.TERMINATION
 			is_elongation = true
+			npc_tut()
 		"TERMINATION":
 			_elongation()
 			phase = PHASES.BASE_PARING
 			is_termination = true
+			npc_tut()
 		"BASE_PARING":
 			phase = PHASES.DELIVERY
 			is_transcribed = true
+			npc_tut()
+	
+	
 	
 	_start_phase(phase)
 
+func npc_tut():
+	if parent and parent.npc:
+		parent.npc.resume_talk()
 
 #START PHASE
 func _start_phase(current_phase : int):

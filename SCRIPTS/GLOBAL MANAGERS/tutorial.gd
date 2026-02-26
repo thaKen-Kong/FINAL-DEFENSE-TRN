@@ -12,6 +12,13 @@ enum TutorialStep {
 	FOURTH,
 	FIFTH,
 	SIXTH,
+	SEVENTH,
+	EIGHTH,
+	NINTH,
+	TENTH,
+	ELEVENTH,
+	TWELVTH,
+	THIRTEENTH,
 	FINISHED
 }
 
@@ -76,7 +83,29 @@ func _zoom_dna():
 			"zoom": Vector2(1, 1)
 		}
 	])
-
+func _zoom_rnap():
+	Cutscene.play_sequence([
+		{
+			"node": get_tree().get_first_node_in_group("player"),
+			"hold": 0.5,
+			"zoom": Vector2(0.5, 0.5)
+		},
+		{
+			"node": get_tree().get_first_node_in_group("rnap"),
+			"hold": 1.0,
+			"zoom": Vector2(0.6, 0.6)
+		},
+		{
+			"node": get_tree().get_first_node_in_group("promoter_region"),
+			"hold": 1.0,
+			"zoom": Vector2(0.6, 0.6)
+		},
+		{
+			"node": get_tree().get_first_node_in_group("player"),
+			"hold": 0.5,
+			"zoom": Vector2(0.5, 0.5)
+		}
+	])
 
 func _zoom_exit_site():
 	Cutscene.play_sequence([

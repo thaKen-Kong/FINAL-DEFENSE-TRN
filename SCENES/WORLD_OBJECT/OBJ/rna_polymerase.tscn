@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biuu8trfvsvdq"]
+[gd_scene format=3 uid="uid://biuu8trfvsvdq"]
 
 [ext_resource type="PackedScene" uid="uid://d1n8ch4bkah52" path="res://SCENES/WORLD_OBJECT/OBJ/object.tscn" id="1_0k6n4"]
 [ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="2_s67i0"]
@@ -67,7 +67,7 @@ _data = {
 &"play": SubResource("Animation_hr0sr")
 }
 
-[node name="RNA_POLYMERASE" instance=ExtResource("1_0k6n4")]
+[node name="RNA_POLYMERASE" unique_id=292690620 groups=["rnap"] instance=ExtResource("1_0k6n4")]
 object_name = "RNAP2"
 grab_action = "GRAB RNA POLYMERASE 2"
 drop_action = "DROP  RNA POLYMERASE 2"
@@ -82,10 +82,8 @@ texture = SubResource("AtlasTexture_gcgip")
 [node name="ClickableInteractionArea" parent="." index="3"]
 action_name = "GRAB RNA POLYMERASE II"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea" index="0" unique_id=1865388178]
 shape = SubResource("CircleShape2D_s67i0")
 
 [node name="AnimationPlayer" parent="." index="4"]
-libraries = {
-&"": SubResource("AnimationLibrary_i60gx")
-}
+libraries/ = SubResource("AnimationLibrary_i60gx")

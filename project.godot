@@ -49,6 +49,9 @@ dna=""
 Map=""
 dnamt=""
 exitsite=""
+rnap=""
+promoter_region=""
+mrna=""
 
 [input]
 

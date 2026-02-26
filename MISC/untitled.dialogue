@@ -58,40 +58,64 @@ match Tutorial.step
 		
 		Nucleolus: Try moving close to it and pressing the **SPACE BAR**.
 	when Tutorial.TutorialStep.FIFTH
-		Nucleolus: Well done.
-		Nucleolus: Now, grab the **RNA polymerase** and attach it to the **promoter region** at the start of the DNA.
-		Nucleolus: Once attached, the initiation minigame will begin.
-		    
+		Nucleolus: Well done. Good Job in interacting the DNA
+		Nucleolus: Here you need to find the TATA region 3 times.
+		Nucleolus: Press start in order for the DNA to show the sequence.
+		Nucleolus: TATA region is one of the region where PROMOTER REGION appears.
+		Nucleolus: It is necessary in order for the transcription to start.
 		- Okay
-		Nucleolus: Remember, you must complete the minigame to start elongation.
+		Nucleolus: Remember, you must complete the minigame to move to the next phase of the TRANSCRIPTION.
 
 	when Tutorial.TutorialStep.SIXTH
-		Nucleolus: Excellent! The RNA polymerase is moving along the DNA.
-		Nucleolus: Pay attention — sometimes it may backtrack. If it pauses, complete the key sequence minigame to keep it moving.
-		    
+		Nucleolus: Excellent! The RNA polymerase have appeared in the map.
+		Nucleolus: Now you need to grab and carry it towards the promoter region that have appeared at the start of the DNA.
+		do Tutorial._zoom_rnap()
+		Nucleolus: To grab and drop an object, you need to press **SPACE BAR**
+		Nucleolus: [wave amp=25 freq=5]PROMOTER REGION IS WHERE THE RNA POLYMERASE WILL BIND IN ORDER TO MOVE TO THE NEXT PHASE[/wave]
 		- Understood
-		Nucleolus: Keep an eye on the elongation progress bar. Once elongation finishes, we move to termination.
+		Nucleolus: Once you bind it to the promoter region. The DNA can now proceed to the elongation. But first you need to finish the minigame that have appeared after you bind the RNA Polymerase.
 
 	when Tutorial.TutorialStep.SEVENTH
-		Nucleolus: Elongation complete! Now, finish the **termination minigame** to release the completed mRNA.
+		Nucleolus: Binding complete! The RNA POLYMERASE NOW MOVES THROUGH THE DNA, this is called the elongation part, where it starts the creation of mRNA or Messenger RNA.
 	    
-		- Let's do it
-			Nucleolus: After completing termination, the mRNA will appear below the DNA. Move close and press **SPACE BAR** to begin base pairing.
+		- Got it
+			Nucleolus: Remember - there are times the RNA POLYMERASE experience pausing -- this is called Back Tracking, rna polymerase experience it when it counters issues in the DNA sequence.
+			Nucleolus: Just press the key sequence using the arrow key on your keyboard at a given time
+			Nucleolus: Failure to do so will result in large ATP reduction.
 
 	when Tutorial.TutorialStep.EIGHTH
-		Nucleolus: Base pairing is crucial! Match the nitrogen bases correctly:
-		Nucleolus: **A → U**, **G → C**
-		Nucleolus: Complete the base pairing minigame to convert mRNA into a packaged form ready for delivery.
+		Nucleolus: Excellent, the phase is now in termination:
+		Nucleolus: Termination is crucial in order for the RNA polymerase to unbind to the DNA, it also causes the mRNA to detach from the DNA
+		Nucleolus: Press start and click fast in order to finish the minigame.
 		    
 		- Got it
-			Nucleolus: Well done! The mRNA is now packaged and ready.
+			Nucleolus: Tip: press space fast.
 
 	when Tutorial.TutorialStep.NINTH
-		Nucleolus: Finally, deliver the packaged mRNA to the **exit site** at the south end of the nucleus.
-		Nucleolus: Move near the exit site and press **SPACE BAR** to complete your first transcription mission.
-		    
-		- On my way
-			Nucleolus: Excellent! You have successfully completed your first transcription task.
-			Nucleolus: From here, you can explore more levels or practice the process until you master it.
-			do Tutorial.next_part()
+		Nucleolus: Great Job on destroying your space bar. To dna have successfully created the messenger RNA.
+		Nucleolus: Next, you need to go near to it and interact with it.
+	when Tutorial.TutorialStep.TENTH
+		Nucleolus: Here you may see this mingame pretty hard. But once you know the process you're gonna be an expert at paring the bases
+		Nucleolus: The first thing you may see are three boxes. Those three boxes will contain the Nitrogen bases -- specifically A U C G.
+	when Tutorial.TutorialStep.ELEVENTH
+		Nucleolus: Amazing. You successfully paired all the nitrogen base from DNA sequence to MRNA SEQUENCE.
+		Nucleolus: The MRNA are now packaged and can now be delivered at the exit site through the south end of the nucleus.
+		Nucleolus: Go there and drop the package.
+		- Understood
+			Nucleolus: Great!
+			Nucleolus: Once you done it, Congratulations!! You successfully transcibe the DNA to MRNA.
+		set Tutorial.tutorial_finished = true
+		do Tutorial.next_part()
+	when Tutorial.TutorialStep.TWELVTH:
+		Nucleolus: What an amazing job. Congratulations on completing the tutorial.
+		Nucleolus: You can now move to the next level by choosing a level in the DNA MISSION TERMINAL
+		- Ok
+			Nucleolus: Great! Have A great time at playing the game!
+		do Tutorial.next_part()
+	when Tutorial.TutorialStep.THIRTHEENTH:
+		Nucleolus: Hello! What do you want?
+		- How to interact?
+			Nucleolus: Easy, just press **SPACE BAR** on your keyboard
+		- How to start mission?
+			Nucleolus: Just go to the building north of me, choose a level then press start.
 => END

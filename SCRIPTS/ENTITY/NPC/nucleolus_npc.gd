@@ -20,7 +20,11 @@ func talk_to_npc():
 	DialogueManager.dialogue_ended.connect(func(res): 
 		if interaction_area and !interaction_area.is_interactable:
 			interaction_area.is_interactable = true
-		) 
+		)
+	#
+	if Tutorial.TutorialStep.ELEVENTH:
+		remove_child(interaction_area)
+	
 
 func resume_talk():
 	Tutorial.next_part()
