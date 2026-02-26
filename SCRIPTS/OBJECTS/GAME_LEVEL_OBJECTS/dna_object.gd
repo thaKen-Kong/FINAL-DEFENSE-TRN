@@ -99,6 +99,9 @@ func _instantiate_minigame(node : Node):
 # -------------
 func _pre_initiation():
 	if !is_pre_initation and player:
+		if parent.npc:
+			if !Tutorial.tutorial_finished:
+				parent.npc.resume_talk()
 		var pre_init_minigame_instance = pre_initiation_minigame_scene.instantiate()
 		_instantiate_minigame(pre_init_minigame_instance)
 

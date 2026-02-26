@@ -57,5 +57,41 @@ match Tutorial.step
 		do Tutorial._zoom_dna()
 		
 		Nucleolus: Try moving close to it and pressing the **SPACE BAR**.
+	when Tutorial.TutorialStep.FIFTH
+		Nucleolus: Well done.
+		Nucleolus: Now, grab the **RNA polymerase** and attach it to the **promoter region** at the start of the DNA.
+		Nucleolus: Once attached, the initiation minigame will begin.
+		    
+		- Okay
+		Nucleolus: Remember, you must complete the minigame to start elongation.
 
+	when Tutorial.TutorialStep.SIXTH
+		Nucleolus: Excellent! The RNA polymerase is moving along the DNA.
+		Nucleolus: Pay attention — sometimes it may backtrack. If it pauses, complete the key sequence minigame to keep it moving.
+		    
+		- Understood
+		Nucleolus: Keep an eye on the elongation progress bar. Once elongation finishes, we move to termination.
+
+	when Tutorial.TutorialStep.SEVENTH
+		Nucleolus: Elongation complete! Now, finish the **termination minigame** to release the completed mRNA.
+	    
+		- Let's do it
+			Nucleolus: After completing termination, the mRNA will appear below the DNA. Move close and press **SPACE BAR** to begin base pairing.
+
+	when Tutorial.TutorialStep.EIGHTH
+		Nucleolus: Base pairing is crucial! Match the nitrogen bases correctly:
+		Nucleolus: **A → U**, **G → C**
+		Nucleolus: Complete the base pairing minigame to convert mRNA into a packaged form ready for delivery.
+		    
+		- Got it
+			Nucleolus: Well done! The mRNA is now packaged and ready.
+
+	when Tutorial.TutorialStep.NINTH
+		Nucleolus: Finally, deliver the packaged mRNA to the **exit site** at the south end of the nucleus.
+		Nucleolus: Move near the exit site and press **SPACE BAR** to complete your first transcription mission.
+		    
+		- On my way
+			Nucleolus: Excellent! You have successfully completed your first transcription task.
+			Nucleolus: From here, you can explore more levels or practice the process until you master it.
+			do Tutorial.next_part()
 => END
