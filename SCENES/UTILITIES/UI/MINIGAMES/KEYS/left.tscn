@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ve2fy2q5jky0"]
+
+[ext_resource type="PackedScene" uid="uid://djtawhvnpe1ib" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/key_to_pressed.tscn" id="1_ou2fl"]
+[ext_resource type="Texture2D" uid="uid://yq11mj3fequo" path="res://ASSETS/PNG/Basic/Double/arrow_w.png" id="2_ebrhe"]
+
+[node name="left" instance=ExtResource("1_ou2fl")]
+icon = ExtResource("2_ebrhe")
+direction = "left"

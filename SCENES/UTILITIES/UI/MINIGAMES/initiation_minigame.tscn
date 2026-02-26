@@ -1,0 +1,332 @@
+[gd_scene load_steps=13 format=3 uid="uid://2gp8ktkjk2sr"]
+
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_lmsxr"]
+[ext_resource type="Script" uid="uid://tcegphtox4gg" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/initiation_minigame.gd" id="2_5vybv"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="2_n3a23"]
+[ext_resource type="PackedScene" uid="uid://wjnlpcuwcubx" path="res://SCENES/UTILITIES/FLASH/flash.tscn" id="3_k6kto"]
+[ext_resource type="PackedScene" uid="uid://dbossfsuiwt5k" path="res://SCENES/UTILITIES/UI/MINIGAMES/POWER_METER/meter.tscn" id="3_ycjys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycjys"]
+atlas = ExtResource("2_n3a23")
+region = Rect2(955, 4080, 2804, 402)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vybv"]
+atlas = ExtResource("2_n3a23")
+region = Rect2(4056, 872, 280, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6kto"]
+atlas = ExtResource("2_n3a23")
+region = Rect2(4097, 511, 217, 277)
+
+[sub_resource type="Animation" id="Animation_k6kto"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tyhty"]
+resource_name = "combo_animaition"
+
+[sub_resource type="Animation" id="Animation_5vybv"]
+resource_name = "rnap"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.030000001, -0.01666667, 0, 0, 1, -0.028333332, 0.016666671, 0, 0),
+"times": PackedFloat32Array(0, 0.18, 0.35)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.030000001, -0.01666667, 0, 0, 1, -0.03611111, 0.016666671, 0, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.35)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyhty"]
+_data = {
+&"RESET": SubResource("Animation_k6kto"),
+&"combo_animaition": SubResource("Animation_tyhty"),
+&"rnap": SubResource("Animation_5vybv")
+}
+
+[node name="INITIATION_MINIGAME" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lmsxr")
+script = ExtResource("2_5vybv")
+f = ExtResource("3_k6kto")
+shrink_increment = 0.02
+progress_fill = 10.0
+progress_decay = 3.0
+
+[node name="TITLE_CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.52605593, 0.3563567, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.75
+offset_top = 28.0
+offset_right = 217.75
+offset_bottom = 132.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TITLE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "INITIATION MINIGAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BASE_CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.5
+offset_top = -213.0
+offset_right = 587.5
+offset_bottom = 325.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.0
+offset_top = -238.25
+offset_right = 551.0
+offset_bottom = 172.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_SHADOW" type="TextureRect" parent="BASE_CONTAINER"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.7607843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -206.25
+offset_right = 2468.0
+offset_bottom = 195.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_ycjys")
+
+[node name="DNA" type="TextureRect" parent="BASE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -221.25
+offset_right = 2468.0
+offset_bottom = 180.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_ycjys")
+
+[node name="PROMOTER_TEXTURE" type="TextureRect" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 510.5
+offset_top = 58.0
+offset_right = 790.5
+offset_bottom = 434.0
+texture = SubResource("AtlasTexture_5vybv")
+
+[node name="RNAP_TEXTURE" type="TextureRect" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 548.5
+offset_top = 99.0
+offset_right = 765.5
+offset_bottom = 376.0
+pivot_offset = Vector2(116, 151)
+texture = SubResource("AtlasTexture_k6kto")
+
+[node name="DNA_STRAND_LABEL" type="Label" parent="BASE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 57.0
+offset_right = 198.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.58431375)
+theme_override_font_sizes/font_size = 30
+text = "DNA STRAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -561.0
+offset_top = -207.25
+offset_right = -379.0
+offset_bottom = 98.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="BASE_CONTAINER/CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -122.0
+offset_right = 59.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+
+[node name="BIND_PROGRESS_LABEL" type="Label" parent="BASE_CONTAINER/CONTAINER"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -26.0
+offset_right = 171.0
+offset_bottom = -7.0
+text = "BIND PROGRESS"
+
+[node name="CONTAINER2" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = 103.75
+offset_right = -378.0
+offset_bottom = 172.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ATP_ENERGY" type="Label" parent="BASE_CONTAINER/CONTAINER2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 26.0
+offset_right = 155.0
+offset_bottom = 45.0
+text = "ATP:"
+
+[node name="METER" parent="BASE_CONTAINER" instance=ExtResource("3_ycjys")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -445.5
+offset_top = -63.0
+offset_right = 445.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CLICK_AT YELLOW" type="Label" parent="BASE_CONTAINER/METER"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = -33.0
+offset_right = 121.0
+offset_bottom = 3.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "CLICK WHEN THE NEEDLE OVERLAPS THE YELLOW BAR!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Combo" type="Label" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 875.5
+offset_top = 355.0
+offset_right = 1077.5
+offset_bottom = 402.0
+rotation = 0.2617994
+theme_override_colors/font_color = Color(1, 1, 0.007843138, 1)
+theme_override_font_sizes/font_size = 40
+text = "COMBO "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="BASE_CONTAINER/Combo"]
+layout_mode = 0
+offset_left = -20.039236
+offset_top = 48.851078
+offset_right = 243.96077
+offset_bottom = 67.851074
+theme_override_colors/font_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+text = "ATP REDUCTION REDUCED"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tyhty")
+}

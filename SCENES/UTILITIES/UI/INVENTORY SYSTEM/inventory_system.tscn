@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://kq0mh78qmy4e"]
+
+[ext_resource type="PackedScene" uid="uid://cdlkahs2fdrcg" path="res://SCENES/UTILITIES/UI/INVENTORY SYSTEM/inv_slot.tscn" id="1_lcvj2"]
+[ext_resource type="Texture2D" uid="uid://4ycxf56amjf5" path="res://ASSETS/ui_interface/Wenrexa Interface UI KIT #4/PNG/Icons/Icon28.png" id="2_yd6dm"]
+
+[node name="InventorySystem" type="GridContainer"]
+offset_left = 19.0
+offset_top = 134.0
+offset_right = 182.0
+offset_bottom = 658.0
+
+[node name="inv_slot" parent="." instance=ExtResource("1_lcvj2")]
+layout_mode = 2
+initial_item_name = "TEST"
+initial_item_texture = ExtResource("2_yd6dm")
+
+[node name="inv_slot2" parent="." instance=ExtResource("1_lcvj2")]
+layout_mode = 2
+
+[node name="inv_slot3" parent="." instance=ExtResource("1_lcvj2")]
+layout_mode = 2
+
+[node name="inv_slot4" parent="." instance=ExtResource("1_lcvj2")]
+layout_mode = 2
+
+[editable path="inv_slot"]
+[editable path="inv_slot2"]
+[editable path="inv_slot3"]
+[editable path="inv_slot4"]

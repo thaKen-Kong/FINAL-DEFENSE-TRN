@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://djvjryggo8v5e"]
+
+[ext_resource type="Texture2D" uid="uid://gfn10vgeu4xq" path="res://ASSETS/rush/Untitled52_20260108195355.png" id="1_xre35"]
+[ext_resource type="Script" uid="uid://cjqi4bx7l3edq" path="res://SCRIPTS/WORLD_OBJECT/OBJ/incomplete_mrna.gd" id="2_ouqwc"]
+[ext_resource type="PackedScene" uid="uid://gs8t0tl2fqlm" path="res://SCENES/UTILITIES/INTERACTION OBJECT/clickable_interaction_area.tscn" id="3_6qqtk"]
+[ext_resource type="PackedScene" uid="uid://cd6vi4npoqijj" path="res://SCENES/UTILITIES/UI/MINIGAMES/base_paring_minigame.tscn" id="3_vnxpp"]
+[ext_resource type="Texture2D" uid="uid://dwjeih7o4fhke" path="res://ASSETS/rush/Untitled50_20260108181446.png" id="4_uglst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouqwc"]
+atlas = ExtResource("1_xre35")
+region = Rect2(150, 15, 1235, 183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uglst"]
+size = Vector2(1290.0765, 211.35611)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnxpp"]
+atlas = ExtResource("4_uglst")
+region = Rect2(27.072716, 56.42981, 889.0022, 234.5354)
+
+[sub_resource type="Animation" id="Animation_vnxpp"]
+resource_name = "spawn"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.0769231, -0.028333334, -0.012820522, 0, 0, 1e-05, -0.105000004, 0.17948553, 0, 0),
+"times": PackedFloat32Array(0, 0.17, 0.36666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2021858, -0.028333334, -0.033697627, 0, 0, 1e-05, -0.105000004, 0.20036264, 0, 0),
+"times": PackedFloat32Array(0, 0.17, 0.36666667)
+}
+
+[sub_resource type="Animation" id="Animation_fis8p"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thoqe"]
+_data = {
+&"RESET": SubResource("Animation_fis8p"),
+&"spawn": SubResource("Animation_vnxpp")
+}
+
+[node name="INCOMPLETE_MRNA" type="Sprite2D"]
+position = Vector2(0, 8.491806)
+texture = SubResource("AtlasTexture_ouqwc")
+offset = Vector2(0, -42)
+script = ExtResource("2_ouqwc")
+base_paring_minigame_ui = ExtResource("3_vnxpp")
+
+[node name="ClickableInteractionArea" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_6qqtk")]
+collision_mask = 2
+action_name = "TRANSCRIBE DNA TO RNA"
+sprite = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea"]
+position = Vector2(-2.7601798, -36.012207)
+shape = SubResource("RectangleShape2D_uglst")
+
+[node name="DNA_SHADOW" type="Sprite2D" parent="."]
+position = Vector2(-6, 55.00003)
+scale = Vector2(1.5883014, 0.6666664)
+texture = SubResource("AtlasTexture_vnxpp")
+
+[node name="DNA_SHADOW3" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_vnxpp")
+
+[node name="DNA_SHADOW5" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_vnxpp")
+
+[node name="DNA_SHADOW6" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_vnxpp")
+
+[node name="DNA_SHADOW4" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_vnxpp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_thoqe")
+}

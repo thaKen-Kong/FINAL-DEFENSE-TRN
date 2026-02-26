@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvycm4xn0ihff"]
+
+[ext_resource type="Theme" uid="uid://4bwv0qn712bf" path="res://ASSETS/Themes/Button.tres" id="1_a8sxk"]
+[ext_resource type="Script" uid="uid://i0fkgji3k5kn" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/DNA_TEMPLATE_STRAND/nitrogen_base_buttons.gd" id="2_qp65p"]
+
+[node name="NITROGEN_BASE_BUTTONS" type="GridContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = -168.0
+offset_right = 301.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_a8sxk")
+theme_override_constants/h_separation = 30
+columns = 4
+script = ExtResource("2_qp65p")
+
+[node name="A" type="Button" parent="."]
+self_modulate = Color(0.8901961, 0.6117647, 0, 1)
+custom_minimum_size = Vector2(128, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "A"
+
+[node name="U" type="Button" parent="."]
+self_modulate = Color(0, 0.68235296, 0.9411765, 1)
+custom_minimum_size = Vector2(128, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "U"
+
+[node name="C" type="Button" parent="."]
+self_modulate = Color(0, 0.6862745, 0.27058825, 1)
+custom_minimum_size = Vector2(128, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "C"
+
+[node name="G" type="Button" parent="."]
+self_modulate = Color(0.72965395, 0.0008207256, 0.8004927, 1)
+custom_minimum_size = Vector2(128, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "G"

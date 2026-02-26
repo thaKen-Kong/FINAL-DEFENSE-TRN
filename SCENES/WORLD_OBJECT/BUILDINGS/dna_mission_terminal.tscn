@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cq5stn5gpomsx"]
+
+[ext_resource type="Texture2D" uid="uid://dc8uj170geows" path="res://ASSETS/world/Assets/dma_mission_terminal.png" id="1_8knbm"]
+[ext_resource type="Script" uid="uid://dvxss3o7ikp4x" path="res://SCRIPTS/WORLD_OBJECT/BUILDINGS/dna_mission_terminal.gd" id="1_xs8bp"]
+[ext_resource type="PackedScene" uid="uid://gs8t0tl2fqlm" path="res://SCENES/UTILITIES/INTERACTION OBJECT/clickable_interaction_area.tscn" id="2_6sd7j"]
+[ext_resource type="PackedScene" uid="uid://7jb1paxkwtr3" path="res://SCENES/UTILITIES/UI/dna_mt_ui.tscn" id="2_e7vbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xs8bp"]
+size = Vector2(594, 402)
+
+[node name="DNA_MISSION_TERMINAL" type="StaticBody2D" unique_id=746409216 groups=["dnamt"]]
+y_sort_enabled = true
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_xs8bp")
+DNA_UI = ExtResource("2_e7vbp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1519926842]
+position = Vector2(3, 250)
+texture = ExtResource("1_8knbm")
+offset = Vector2(-3, -250)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=96792862]
+polygon = PackedVector2Array(-180, 275, 204, 265, 197, 290, 178, 311, 174, 320, 177, 333, 187, 341, 204, 337, 223, 311, 240, 277, 250, 234, 252, 209, -252, 213, -250, 236, -244, 266, -233, 289, -217, 313, -199, 331, -190, 333, -177, 333, -171, 316, -177, 308, -188, 298, -199, 271)
+
+[node name="ClickableInteractionArea" parent="." unique_id=718722999 node_paths=PackedStringArray("sprite") instance=ExtResource("2_6sd7j")]
+action_name = "DO MISSION"
+sprite = NodePath("../Sprite2D")
+object_name = "DNA MISSION TEMRINAL"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea" unique_id=296932486]
+position = Vector2(0, 191)
+shape = SubResource("RectangleShape2D_xs8bp")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1597160760 groups=["UI"]]

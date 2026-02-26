@@ -1,0 +1,61 @@
+~ tutorial
+match Tutorial.step
+	when Tutorial.TutorialStep.FIRST
+
+		Nucleolus: Welcome!!!
+		Nucleolus: Oh? A new face? You must be new here!
+		- Yes
+			Nucleolus: Nice to meet you! I am Nucleolus, your guide inside the cell.
+			Nucleolus: Before we begin our mission, let me show you how to move around.
+		~ MoveTut
+		Nucleolus: Use the W, A, S, D keys to walk.
+		- W
+			Nucleolus: W to Move Up
+			=> MoveTut
+		- A
+			Nucleolus: A to Move Leftasdad
+			=> MoveTut
+		- S
+			Nucleolus: S to Move Down
+			=> MoveTut
+		- D
+			Nucleolus: D to Move Right
+			=> MoveTut
+		- Let Me Try
+			Nucleolus: Go ahead — try moving around a bit!
+	when Tutorial.TutorialStep.SECOND
+	
+		Nucleolus: Great! Looks like you’re getting the hang of it already.
+		
+		Nucleolus: You can interact things using [SPACE BAR]
+		
+		Nucleolus: Now, let me show you where we are.
+		do Tutorial.trigger_nucleus_intro()
+		Nucleolus: We are inside the nucleus, the control center of the cell.
+		Nucleolus: This is where the DNA is stored, protected, and read.
+		Nucleolus: Our job here is to help transform DNA instructions into messenger RNA, or mRNA.
+		Nucleolus: This process is called transcription.
+		Nucleolus: Don’t worry — I’ll guide you every step of the way.
+		Nucleolus: Ready to begin your first task?
+		- Let's Go
+			do Tutorial._zoom_to_DNAMT()
+			Nucleolus: Go towards the DNA Mission Terminal and select a level. After Selecting a Level press Start.
+			Nucleolus: I'll meet you at the other side.
+			
+			do Tutorial.next_part()
+	when Tutorial.TutorialStep.THIRD
+		Nucleolus: Explore the map first to get familirize about the nucleus.
+		- Sure 
+			Nucleolus: Great, have fun
+		- Where is the DNA MISSION TERMINAL?
+			Nucleolus: Just north of me. There you will find it.
+	when Tutorial.TutorialStep.FOURTH
+		Nucleolus: Hello again!! We are now at a level
+		Nucleolus: This is where the real action begins!
+		Nucleolus: In this level, you will help RNA polymerase transcribe DNA into mRNA. Don't worry, I’ll guide you step by step.
+		Nucleolus: First, interact with the **DNA object** just north of me.
+		do Tutorial._zoom_dna()
+		
+		Nucleolus: Try moving close to it and pressing the **SPACE BAR**.
+
+=> END

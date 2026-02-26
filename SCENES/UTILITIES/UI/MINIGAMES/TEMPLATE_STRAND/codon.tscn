@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ddcqvqxag6c"]
+
+[ext_resource type="Texture2D" uid="uid://gfn10vgeu4xq" path="res://ASSETS/rush/Untitled52_20260108195355.png" id="1_kko4n"]
+[ext_resource type="Script" uid="uid://djjcqhlrjinov" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/DNA_TEMPLATE_STRAND/codon.gd" id="2_th7mk"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="3_l6axx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6axx"]
+atlas = ExtResource("1_kko4n")
+region = Rect2(388, 224, 721, 299)
+
+[node name="CODON" type="TextureRect" node_paths=PackedStringArray("nb_buttons", "slots")]
+offset_right = 721.0
+offset_bottom = 299.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_l6axx")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_th7mk")
+nb_buttons = NodePath("")
+slots = NodePath("SLOTS")
+
+[node name="SLOTS" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(129.257, 38.4)
+layout_mode = 0
+offset_left = 85.71428
+offset_top = 25.357141
+offset_right = 624.28577
+offset_bottom = 185.35715
+theme = ExtResource("3_l6axx")
+theme_override_constants/h_separation = 90
+columns = 3
+
+[node name="SLOT 1" type="Label" parent="SLOTS"]
+custom_minimum_size = Vector2(118, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SLOT 3" type="Label" parent="SLOTS"]
+custom_minimum_size = Vector2(118, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SLOT 2" type="Label" parent="SLOTS"]
+custom_minimum_size = Vector2(118, 160)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1

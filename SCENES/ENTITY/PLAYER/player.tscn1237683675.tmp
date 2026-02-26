@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvvk3doln6jfj"]
+
+[ext_resource type="Script" uid="uid://f1jpkjqir2cj" path="res://SCRIPTS/ENTITY/PLAYER/player.gd" id="1_fiaro"]
+[ext_resource type="Texture2D" uid="uid://cgcd5drk1a058" path="res://icon.svg" id="2_8jq0y"]
+[ext_resource type="Texture2D" uid="uid://o213wxdd1f6s" path="res://ASSETS/rush/ARROW.png" id="3_qouts"]
+[ext_resource type="PackedScene" uid="uid://dgmerjtdsrka8" path="res://SCENES/ENTITY/STATE MACHINE/finite_state_machine.tscn" id="3_w1ms1"]
+[ext_resource type="Script" uid="uid://cj0drukhtnpbx" path="res://SCRIPTS/ENTITY/PLAYER/PLAYER_STATES/idle.gd" id="4_jps7q"]
+[ext_resource type="Script" uid="uid://dyykp6i0kxscg" path="res://SCRIPTS/ENTITY/PLAYER/PLAYER_STATES/move.gd" id="5_si72i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si72i"]
+radius = 47.169907
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dembp"]
+atlas = ExtResource("3_qouts")
+region = Rect2(338, 309, 860, 1144)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 253
+script = ExtResource("1_fiaro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_si72i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_8jq0y")
+
+[node name="ArrowLocation" type="Marker2D" parent="."]
+
+[node name="Arrow" type="Sprite2D" parent="ArrowLocation"]
+position = Vector2(0, -91)
+scale = Vector2(0.05, 0.05)
+texture = SubResource("AtlasTexture_dembp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="FiniteStateMachine" parent="." node_paths=PackedStringArray("initial_state", "entity") instance=ExtResource("3_w1ms1")]
+initial_state = NodePath("idle")
+entity = NodePath("..")
+
+[node name="idle" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("4_jps7q")
+metadata/_custom_type_script = "uid://cj0drukhtnpbx"
+
+[node name="move" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("5_si72i")
+metadata/_custom_type_script = "uid://dyykp6i0kxscg"

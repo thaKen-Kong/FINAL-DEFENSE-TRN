@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://mthq6ltyiwys"]
+
+[ext_resource type="PackedScene" uid="uid://djtawhvnpe1ib" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/key_to_pressed.tscn" id="1_05qc7"]
+[ext_resource type="Texture2D" uid="uid://dgxvpdscncr8h" path="res://ASSETS/PNG/Basic/Double/arrow_s.png" id="2_80ke6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w1ls"]
+atlas = ExtResource("2_80ke6")
+
+[node name="down" instance=ExtResource("1_05qc7")]
+icon = SubResource("AtlasTexture_3w1ls")
+direction = "down"

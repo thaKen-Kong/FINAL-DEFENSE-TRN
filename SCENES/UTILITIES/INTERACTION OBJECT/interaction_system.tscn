@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://kt6eaitc2ne7"]
+
+[ext_resource type="Script" uid="uid://b2jk5mjugru7r" path="res://SCRIPTS/UTILITIES/INTERACTION_OBJECT/interaction_system.gd" id="1_h072a"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="2_bmecp"]
+
+[node name="InteractionSystem" type="Node2D"]
+script = ExtResource("1_h072a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -616.0
+offset_top = 662.0
+offset_right = -238.0
+offset_bottom = 685.0
+grow_horizontal = 2
+theme = ExtResource("2_bmecp")
+text = "[SPACE]"
+vertical_alignment = 1
+autowrap_mode = 3

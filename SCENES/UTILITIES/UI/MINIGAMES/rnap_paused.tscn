@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqan4nojo26rd"]
+
+[ext_resource type="Script" uid="uid://benisqqbox7u8" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/rnap_paused.gd" id="1_5rjw0"]
+[ext_resource type="PackedScene" uid="uid://8ub1yiksro5u" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/up.tscn" id="2_rrgdk"]
+[ext_resource type="PackedScene" uid="uid://mthq6ltyiwys" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/down.tscn" id="3_u6gj1"]
+[ext_resource type="PackedScene" uid="uid://dfhxjr8sw5kgp" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/right.tscn" id="4_yrytc"]
+[ext_resource type="PackedScene" uid="uid://ve2fy2q5jky0" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/left.tscn" id="5_0i8w2"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="6_u6gj1"]
+
+[node name="RNAP_PAUSED" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rjw0")
+keys = Array[PackedScene]([ExtResource("2_rrgdk"), ExtResource("3_u6gj1"), ExtResource("4_yrytc"), ExtResource("5_0i8w2")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27058825)
+
+[node name="KEY_CONTAINER" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.5
+offset_top = 78.0
+offset_right = 398.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+columns = 4
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 370.0
+offset_right = 929.0
+offset_bottom = 406.0
+theme = ExtResource("6_u6gj1")
+theme_override_font_sizes/font_size = 30
+text = "PRESS KEY SEQUENCE QUICK!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 584.0
+offset_right = 1124.0
+offset_bottom = 611.0
+theme = ExtResource("6_u6gj1")
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -9.5
+offset_right = 57.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "TIME LEFT:"
+horizontal_alignment = 1
+vertical_alignment = 1

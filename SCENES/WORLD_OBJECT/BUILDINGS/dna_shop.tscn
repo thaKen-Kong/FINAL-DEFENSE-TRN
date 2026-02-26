@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://5xxhlnbmxni3"]
+
+[ext_resource type="Texture2D" uid="uid://cgcd5drk1a058" path="res://icon.svg" id="1_dw0y4"]
+[ext_resource type="Script" uid="uid://cqox5x4dnl0y4" path="res://SCRIPTS/WORLD_OBJECT/BUILDINGS/dna_shop.gd" id="1_sb61k"]
+
+[node name="DNA_SHOP" type="StaticBody2D" unique_id=1896650517]
+script = ExtResource("1_sb61k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1483680254]
+scale = Vector2(2, 2)
+texture = ExtResource("1_dw0y4")

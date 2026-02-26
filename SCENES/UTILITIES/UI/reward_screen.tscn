@@ -1,0 +1,311 @@
+[gd_scene format=3 uid="uid://bhn20n3o0csq1"]
+
+[ext_resource type="Script" uid="uid://bhg3230rgslu0" path="res://SCRIPTS/UTILITIES/UI/reward_screen.gd" id="1_5xl6b"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_v7try"]
+[ext_resource type="Texture2D" uid="uid://bx5q0857auddn" path="res://ASSETS/ui_interface/Wenrexa Interface UI KIT #4/PNG/Icons/ArrowsRight.png" id="3_062df"]
+[ext_resource type="Texture2D" uid="uid://csu2lwpm1q5ht" path="res://ASSETS/completed-stamp-vector-removebg-preview.png" id="4_ct53l"]
+[ext_resource type="AudioStream" uid="uid://din7xffi6u7vx" path="res://ASSETS/sfx/fast-woosh-230497.mp3" id="5_cxuol"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct53l"]
+atlas = ExtResource("4_ct53l")
+region = Rect2(63, 128, 365, 115)
+
+[sub_resource type="Animation" id="Animation_cxuol"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Completed:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2771.5532, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Completed:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1148.3365, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ct53l"]
+resource_name = "show_stamp"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Completed:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(2771.5532, -0.25, 0, 0.25, 0, 1014.80365, -0.053333335, 292.7916, 0, 0),
+"times": PackedFloat32Array(0, 0.32)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Completed:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1148.3365, -0.25, 0, 0.25, 0, 409.49133, -0.053333335, 123.14088, 0, 0),
+"times": PackedFloat32Array(0, 0.32)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcdwd"]
+_data = {
+&"RESET": SubResource("Animation_cxuol"),
+&"show_stamp": SubResource("Animation_ct53l")
+}
+
+[node name="REWARD_SCREEN" type="Control" unique_id=78292600]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v7try")
+script = ExtResource("1_5xl6b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=32150926]
+process_mode = 3
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LEVE_STATUS" type="Label" parent="." unique_id=371260011]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.5
+offset_top = 79.0
+offset_right = 232.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "LEVEL STATUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LEVEL_SUMMARY" type="Label" parent="." unique_id=148608541]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 152.0
+offset_right = 478.0
+offset_bottom = 210.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "LEVEL SUMMARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MRNA_DELIVERED" type="Label" parent="." unique_id=568269624]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 224.0
+offset_right = -194.0
+offset_bottom = 282.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "MRNA DELIVERED:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AMOUNT" type="Label" parent="MRNA_DELIVERED" unique_id=1797910199]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 341.5
+offset_right = 540.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "1 / 1 MRNA"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="REWARD" type="Label" parent="MRNA_DELIVERED" unique_id=1065630762]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 562.5
+offset_right = 761.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "0 GUANIX"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ATP_ENERGY_LEFT" type="Label" parent="." unique_id=645029728]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 282.0
+offset_right = -194.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "ATP ENERGY LEFT:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AMOUNT" type="Label" parent="ATP_ENERGY_LEFT" unique_id=1938418144]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 341.5
+offset_right = 540.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "0 ATP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="REWARD" type="Label" parent="ATP_ENERGY_LEFT" unique_id=879455396]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 562.5
+offset_right = 761.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "0 GUANIX"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BASE_LEVEL_REWARD" type="Label" parent="." unique_id=1995065754]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 341.0
+offset_right = -85.0
+offset_bottom = 399.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "BASE LEVEL REWARD:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="REWARD" type="Label" parent="BASE_LEVEL_REWARD" unique_id=2023566156]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 513.0
+offset_right = 712.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "0 GUANIX"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TOTAL_REWARD" type="Label" parent="." unique_id=1296012502]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 517.0
+offset_right = -85.0
+offset_bottom = 575.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "TOTAL:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TOTAL_REWARD2" type="Label" parent="TOTAL_REWARD" unique_id=186213757]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 377.0
+offset_right = 858.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "0 GUANIX"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="FINISH_BUTTON" type="TextureButton" parent="." unique_id=892115483]
+z_index = 1
+layout_mode = 0
+offset_left = 1212.0
+offset_top = 630.0
+offset_right = 1249.0
+offset_bottom = 693.0
+texture_normal = ExtResource("3_062df")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Completed" type="TextureRect" parent="." unique_id=1534766510]
+z_index = 2
+layout_mode = 0
+offset_left = 124.0
+offset_top = 173.0
+offset_right = 2895.5532
+offset_bottom = 1321.3365
+texture = SubResource("AtlasTexture_ct53l")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1456849918]
+libraries/ = SubResource("AnimationLibrary_mcdwd")
+
+[node name="whoosh" type="AudioStreamPlayer" parent="." unique_id=236915753]
+stream = ExtResource("5_cxuol")
+
+[connection signal="pressed" from="FINISH_BUTTON" to="." method="_on_finish_button_pressed"]

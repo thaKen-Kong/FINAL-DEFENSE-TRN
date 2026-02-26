@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dadnbbiinklys"]
+
+[ext_resource type="Script" uid="uid://uq3u5p1p3i2s" path="res://SCRIPTS/WORLD_OBJECT/OBJ/object_drop_area.gd" id="1_luhsy"]
+
+[node name="OBJECT_DROP_AREA" type="Area2D"]
+collision_layer = 32
+collision_mask = 64
+script = ExtResource("1_luhsy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

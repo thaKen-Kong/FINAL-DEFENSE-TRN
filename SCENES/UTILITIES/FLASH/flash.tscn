@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://wjnlpcuwcubx"]
+
+[ext_resource type="Script" uid="uid://djexvx1tv30h" path="res://SCRIPTS/UTILITIES/FLASH/flash.gd" id="1_voqok"]
+
+[node name="flash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_voqok")
+
+[node name="green" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0.33333334, 0.2)
+
+[node name="red" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.95686275, 0, 0.023529412, 0.2)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvvk3doln6jfj"]
+
+[ext_resource type="Script" uid="uid://f1jpkjqir2cj" path="res://SCRIPTS/ENTITY/PLAYER/player.gd" id="1_fiaro"]
+[ext_resource type="Texture2D" uid="uid://cgcd5drk1a058" path="res://icon.svg" id="2_8jq0y"]
+[ext_resource type="PackedScene" uid="uid://dgmerjtdsrka8" path="res://SCENES/ENTITY/STATE MACHINE/finite_state_machine.tscn" id="3_w1ms1"]
+[ext_resource type="Script" uid="uid://cj0drukhtnpbx" path="res://SCRIPTS/ENTITY/PLAYER/PLAYER_STATES/idle.gd" id="4_jps7q"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fiaro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8jq0y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FiniteStateMachine" parent="." node_paths=PackedStringArray("initial_state", "entity") instance=ExtResource("3_w1ms1")]
+initial_state = NodePath("idle")
+entity = NodePath("..")
+
+[node name="idle" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("4_jps7q")
+metadata/_custom_type_script = "uid://cj0drukhtnpbx"

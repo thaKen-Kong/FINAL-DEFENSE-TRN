@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ub1yiksro5u"]
+
+[ext_resource type="PackedScene" uid="uid://djtawhvnpe1ib" path="res://SCENES/UTILITIES/UI/MINIGAMES/KEYS/key_to_pressed.tscn" id="1_cfyw7"]
+[ext_resource type="Texture2D" uid="uid://cskjgvptdtodh" path="res://ASSETS/PNG/Basic/Double/arrow_n.png" id="2_ntedl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgpgs"]
+atlas = ExtResource("2_ntedl")
+
+[node name="UP" instance=ExtResource("1_cfyw7")]
+icon = SubResource("AtlasTexture_dgpgs")
+direction = "up"

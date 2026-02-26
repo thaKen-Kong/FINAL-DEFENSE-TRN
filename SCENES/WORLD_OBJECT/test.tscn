@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjejwucoeuila"]
+
+[ext_resource type="Script" uid="uid://cuo76qqflsh53" path="res://SCRIPTS/WORLD_OBJECT/test.gd" id="1_1r7u6"]
+[ext_resource type="Texture2D" uid="uid://cgcd5drk1a058" path="res://icon.svg" id="2_bkrq6"]
+
+[node name="TEST" type="Node2D" node_paths=PackedStringArray("points")]
+script = ExtResource("1_1r7u6")
+points = [NodePath("object_1"), NodePath("object_2"), NodePath("object_3"), NodePath("object_4"), NodePath("object_5")]
+
+[node name="object_1" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="object_1"]
+texture = ExtResource("2_bkrq6")
+
+[node name="object_2" type="CharacterBody2D" parent="."]
+position = Vector2(141, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="object_2"]
+texture = ExtResource("2_bkrq6")
+
+[node name="object_3" type="CharacterBody2D" parent="."]
+position = Vector2(288, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="object_3"]
+texture = ExtResource("2_bkrq6")
+
+[node name="object_4" type="CharacterBody2D" parent="."]
+position = Vector2(434, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="object_4"]
+texture = ExtResource("2_bkrq6")
+
+[node name="object_5" type="CharacterBody2D" parent="."]
+position = Vector2(587, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="object_5"]
+texture = ExtResource("2_bkrq6")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wym3q21cpfww"]
+
+[ext_resource type="Script" uid="uid://c3xiustkb2855" path="res://SCRIPTS/GLOBAL MANAGERS/GameState.gd" id="1_8y2gi"]
+[ext_resource type="Script" uid="uid://deqitwxfsa3oy" path="res://SCRIPTS/RESOURCES/leveldata.gd" id="2_16m2j"]
+
+[sub_resource type="Resource" id="Resource_54eop"]
+script = ExtResource("2_16m2j")
+max_levels = 20
+metadata/_custom_type_script = "uid://deqitwxfsa3oy"
+
+[node name="GameState" type="Node2D" unique_id=549470231]
+script = ExtResource("1_8y2gi")
+level_data = SubResource("Resource_54eop")

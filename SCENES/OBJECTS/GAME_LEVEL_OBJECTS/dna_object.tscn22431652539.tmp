@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://bv5oje4fq6tsf"]
+
+[ext_resource type="Script" uid="uid://dowl04rakfc1h" path="res://SCRIPTS/OBJECTS/GAME_LEVEL_OBJECTS/dna_object.gd" id="1_g86x6"]
+[ext_resource type="PackedScene" uid="uid://c111pefwpuin7" path="res://SCENES/UTILITIES/UI/MINIGAMES/pre_initiation_minigame.tscn" id="2_qx3aw"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="2_w7t86"]
+[ext_resource type="Texture2D" uid="uid://dwjeih7o4fhke" path="res://ASSETS/rush/Untitled50_20260108181446.png" id="3_hwadn"]
+[ext_resource type="PackedScene" uid="uid://gs8t0tl2fqlm" path="res://SCENES/UTILITIES/INTERACTION OBJECT/clickable_interaction_area.tscn" id="4_hwadn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7t86"]
+size = Vector2(815, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sqjq"]
+atlas = ExtResource("3_hwadn")
+region = Rect2(27.072716, 56.42981, 889.0022, 234.5354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3aw"]
+atlas = ExtResource("2_w7t86")
+region = Rect2(955, 4080, 2804, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx3aw"]
+size = Vector2(2855.0957, 381.88184)
+
+[node name="DNA_OBJECT" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_g86x6")
+pre_initiation_minigame_scene = ExtResource("2_qx3aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 141)
+shape = SubResource("RectangleShape2D_w7t86")
+
+[node name="DNA_SHADOW" type="Sprite2D" parent="."]
+position = Vector2(-4, 189)
+scale = Vector2(3.5929117, 1)
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW3" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW4" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SPRITE" type="Node2D" parent="."]
+
+[node name="DNA_SHADOW2" type="Sprite2D" parent="DNA_SPRITE"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 19)
+texture = SubResource("AtlasTexture_qx3aw")
+
+[node name="DNA_SPRITE" type="Sprite2D" parent="DNA_SPRITE"]
+texture = SubResource("AtlasTexture_qx3aw")
+
+[node name="ClickableInteractionArea" parent="." instance=ExtResource("4_hwadn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea"]
+position = Vector2(-2.525866, 3.9513142)
+shape = SubResource("RectangleShape2D_qx3aw")

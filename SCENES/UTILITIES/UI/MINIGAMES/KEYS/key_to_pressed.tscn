@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://djtawhvnpe1ib"]
+
+[ext_resource type="Script" uid="uid://cae6iqvocjkuu" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/KEYS/key_to_pressed.gd" id="1_l7nl1"]
+[ext_resource type="FontFile" uid="uid://6mwpouye5hpu" path="res://ASSETS/fonts/TrueType (.ttf)/Kaph-Regular.ttf" id="1_rogm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm1b5"]
+content_margin_bottom = 30.0
+bg_color = Color(0.67440486, 0.59582925, 0.34508777, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_l7nl1"]
+Button/colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
+Button/colors/icon_disabled_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_rogm7")
+Button/styles/disabled = SubResource("StyleBoxFlat_xm1b5")
+Button/styles/normal = SubResource("StyleBoxFlat_xm1b5")
+
+[node name="KEY_TO_PRESSED" type="Button"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_l7nl1")
+disabled = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_l7nl1")

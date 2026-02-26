@@ -1,0 +1,226 @@
+[gd_scene load_steps=10 format=3 uid="uid://c111pefwpuin7"]
+
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_ktkg5"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="2_5voog"]
+[ext_resource type="Script" uid="uid://v8i1lmsn8025" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/pre_initiation_minigame.gd" id="2_pyxbc"]
+[ext_resource type="PackedScene" uid="uid://cdlkahs2fdrcg" path="res://SCENES/UTILITIES/UI/INVENTORY SYSTEM/inv_slot.tscn" id="3_2jm24"]
+[ext_resource type="PackedScene" uid="uid://wjnlpcuwcubx" path="res://SCENES/UTILITIES/FLASH/flash.tscn" id="3_64xmk"]
+[ext_resource type="Texture2D" uid="uid://c6scl04psfvm7" path="res://ASSETS/ui_interface/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_Bar.png" id="5_wfgpb"]
+[ext_resource type="Texture2D" uid="uid://clt4nhsj1q118" path="res://ASSETS/ui_interface/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBarBorder.png" id="6_64xmk"]
+[ext_resource type="Texture2D" uid="uid://dd1e7ap40y3t5" path="res://ASSETS/ui_interface/Wenrexa Interface UI KIT #4/PNG/ProgressBar_02/BarV2_ProgressBar.png" id="7_nfaio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jm24"]
+atlas = ExtResource("2_5voog")
+region = Rect2(955, 4080, 2804, 402)
+
+[node name="PRE_INITIATION_MINIGAME" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_ktkg5")
+script = ExtResource("2_pyxbc")
+screen = ExtResource("3_64xmk")
+
+[node name="MINIGAME TITLE" type="Panel" parent="."]
+self_modulate = Color(1.0107458e-06, 0.49419636, 0.2795987, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.5
+offset_top = 31.0
+offset_right = 261.5
+offset_bottom = 144.0
+grow_horizontal = 2
+
+[node name="TITLE" type="Label" parent="MINIGAME TITLE"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -9.5
+offset_right = 108.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "PRE INITIATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BASE_CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.75
+offset_top = -205.25
+offset_right = 518.75
+offset_bottom = 327.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.0
+offset_top = -237.0
+offset_right = 483.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_SHADOW" type="TextureRect" parent="BASE_CONTAINER/DNA_CONTAINER"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.7607843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1267.0
+offset_top = -224.0
+offset_right = 1537.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2jm24")
+
+[node name="DNA" type="TextureRect" parent="BASE_CONTAINER/DNA_CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1267.0
+offset_top = -239.0
+offset_right = 1537.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2jm24")
+
+[node name="RANDOMIZE_DNA_SEQUENCE" type="Label" parent="BASE_CONTAINER/DNA_CONTAINER/DNA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.5
+offset_top = -23.5
+offset_right = 477.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DNA_SEQUENCE_TEXT" type="Label" parent="BASE_CONTAINER/DNA_CONTAINER/DNA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.8888
+offset_top = -145.44444
+offset_right = 149.1112
+offset_bottom = -98.44447
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "DNA SEQUENCE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATP_ENERGY" type="Label" parent="BASE_CONTAINER/DNA_CONTAINER"]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 351.0
+offset_right = 892.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 25
+text = "ATP ENERGY: "
+autowrap_mode = 3
+
+[node name="inv_slot" parent="BASE_CONTAINER" instance=ExtResource("3_2jm24")]
+layout_mode = 0
+offset_left = 63.5
+offset_top = 349.5
+offset_right = 191.5
+offset_bottom = 477.5
+drop_slot = "TEST"
+
+[node name="Panel" parent="BASE_CONTAINER/inv_slot" index="0"]
+self_modulate = Color(0, 0, 0, 0.4862745)
+
+[node name="PRESS" type="Button" parent="BASE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 109.0
+offset_right = 134.25
+offset_bottom = 183.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START!"
+
+[node name="Label" type="Label" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 173.75
+offset_top = 385.25
+offset_right = 390.75
+offset_bottom = 404.25
+text = " <- INSERT GTF HERE"
+
+[node name="METER" type="TextureProgressBar" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 206.75
+offset_top = 408.25
+offset_right = 393.75
+offset_bottom = 437.25
+nine_patch_stretch = true
+texture_under = ExtResource("5_wfgpb")
+texture_over = ExtResource("6_64xmk")
+texture_progress = ExtResource("7_nfaio")
+
+[node name="CLOSE_UI" type="Button" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 142.0
+offset_right = 149.0
+offset_bottom = 177.0
+text = "X"
+
+[connection signal="gui_input" from="BASE_CONTAINER/DNA_CONTAINER/DNA/RANDOMIZE_DNA_SEQUENCE" to="." method="_on_RANDOMIZE_DNA_SEQUENCE_gui_input"]
+[connection signal="pressed" from="BASE_CONTAINER/PRESS" to="." method="_on_press_pressed"]
+[connection signal="pressed" from="CLOSE_UI" to="." method="_on_close_ui_pressed"]
+
+[editable path="BASE_CONTAINER/inv_slot"]

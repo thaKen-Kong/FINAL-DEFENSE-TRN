@@ -1,0 +1,322 @@
+[gd_scene load_steps=11 format=3 uid="uid://buygyih4jpaa1"]
+
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_0d8ow"]
+[ext_resource type="Script" uid="uid://rol3gxnj26di" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/termination_minigame.gd" id="1_hqbco"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="3_1qkmi"]
+[ext_resource type="PackedScene" uid="uid://wjnlpcuwcubx" path="res://SCENES/UTILITIES/FLASH/flash.tscn" id="3_d6q74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6q74"]
+atlas = ExtResource("3_1qkmi")
+region = Rect2(955, 4080, 2804, 402)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t1wt"]
+atlas = ExtResource("3_1qkmi")
+region = Rect2(4097, 511, 217, 277)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsybc"]
+atlas = ExtResource("3_1qkmi")
+region = Rect2(4026, 1370, 305, 367)
+
+[sub_resource type="Animation" id="Animation_1qkmi"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BASE_CONTAINER/PROMOTER_TEXTURE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BASE_CONTAINER/PROMOTER_TEXTURE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(480, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(116, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0d8ow"]
+resource_name = "termination"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BASE_CONTAINER/PROMOTER_TEXTURE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.021666666, -0.016666671, 0, 0, 1, -0.03333334, 0, 0, 0, 1, -0.035555553, 0.01516667, 0, 0),
+"times": PackedFloat32Array(0, 0.15333337, 0.36666667, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BASE_CONTAINER/PROMOTER_TEXTURE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.021666666, -0.016666671, 0, 0, 1.1, -0.03333334, 0, 0, 0, 1, -0.07444444, 0.01666667, 0, 0),
+"times": PackedFloat32Array(0, 0.15333337, 0.2866667, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 0, 2),
+"points": PackedFloat32Array(480, -0.25, 0, 0.25, 0, 499, -0.013333334, -3.1666667, 0, 0, 458, -0.018333334, 6.8333335, 0, 0, 473, -0.010000001, -2.5, 0, 0, 501, -0.010000001, -4.666667, 0, 0, 501, -0.011666666, 0, 0, 0, 479, -0.020000001, 3.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.08, 0.19, 0.25, 0.31, 0.33333334, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BASE_CONTAINER/RNAP_TEXTURE:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 0, 2),
+"points": PackedFloat32Array(116, -0.25, 0, 0.25, 0, 116, -0.013333334, 0, 0, 0, 117, -0.018333334, -0.16666667, 0, 0, 104, -0.010000001, 2.1666667, 0, 0, 103, -0.010000001, 0.16666667, 0, 0, 103, -0.011666666, 0, 0, 0, 119, -0.020000001, -2.6666667, 0, 0),
+"times": PackedFloat32Array(0, 0.08, 0.19, 0.25, 0.31, 0.33333334, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6q74"]
+_data = {
+&"RESET": SubResource("Animation_1qkmi"),
+&"termination": SubResource("Animation_0d8ow")
+}
+
+[node name="TERMINATION_MINIGAME" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0d8ow")
+script = ExtResource("1_hqbco")
+flash_screen = ExtResource("3_d6q74")
+fill_amount = 4.0
+decay_amount = 10.0
+timer = 10.0
+
+[node name="BASE_CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -226.0
+offset_right = 588.0
+offset_bottom = 337.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.5
+offset_top = -242.5
+offset_right = 196.5
+offset_bottom = 192.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DNA_SHADOW" type="TextureRect" parent="BASE_CONTAINER"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.7607843)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2395.5
+offset_top = -193.25
+offset_right = 408.5
+offset_bottom = 208.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_d6q74")
+
+[node name="DNA" type="TextureRect" parent="BASE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2395.5
+offset_top = -208.25
+offset_right = 408.5
+offset_bottom = 193.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_d6q74")
+
+[node name="RNAP_TEXTURE" type="TextureRect" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 116.0
+offset_right = 697.00073
+offset_bottom = 393.0
+pivot_offset = Vector2(116, 151)
+texture = SubResource("AtlasTexture_8t1wt")
+
+[node name="CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 218.5
+offset_top = -240.75
+offset_right = 542.5
+offset_bottom = 193.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="BASE_CONTAINER/CONTAINER"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -155.0
+offset_right = 122.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+
+[node name="BIND_PROGRESS_LABEL" type="Label" parent="BASE_CONTAINER/CONTAINER"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 293.0
+offset_bottom = 51.0
+text = "TERMINATION PROGRESS"
+
+[node name="INSTRUCTION" type="Label" parent="BASE_CONTAINER/CONTAINER"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 375.0
+offset_right = 304.0
+offset_bottom = 394.0
+text = "PRESS SPACE REPEATEDLY!"
+
+[node name="PROMOTER_TEXTURE" type="TextureRect" parent="BASE_CONTAINER"]
+self_modulate = Color(1, 1, 1, 0.72156864)
+layout_mode = 0
+offset_left = 439.0
+offset_top = 77.0
+offset_right = 744.0
+offset_bottom = 444.0
+pivot_offset = Vector2(151.8182, 189.0909)
+texture = SubResource("AtlasTexture_nsybc")
+
+[node name="Timer_Bar" type="ProgressBar" parent="BASE_CONTAINER"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 498.0
+offset_right = 780.0
+offset_bottom = 525.0
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="timer_label" type="Label" parent="BASE_CONTAINER/Timer_Bar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 73.0
+offset_bottom = 24.0
+text = "TIMER:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TITLE_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.52605593, 0.3563567, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -246.0
+offset_top = -115.0
+offset_right = 246.0
+offset_bottom = -11.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="BASE_CONTAINER/TITLE_CONTAINER"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "TERMINATION MINIGAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 616.0
+offset_right = 1148.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 30
+text = "START!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d6q74")
+}
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

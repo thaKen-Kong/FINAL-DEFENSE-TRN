@@ -1,0 +1,280 @@
+[gd_scene load_steps=10 format=3 uid="uid://cd6vi4npoqijj"]
+
+[ext_resource type="Script" uid="uid://fr1prmvg7qpg" path="res://SCRIPTS/UTILITIES/UI/MINIGAMES/base_paring_minigame.gd" id="1_hscd0"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_uhf00"]
+[ext_resource type="Texture2D" uid="uid://gfn10vgeu4xq" path="res://ASSETS/rush/Untitled52_20260108195355.png" id="2_c1fjh"]
+[ext_resource type="PackedScene" uid="uid://bnlm1gak5dcge" path="res://SCENES/UTILITIES/UI/MINIGAMES/TEMPLATE_STRAND/dna_template_strand.tscn" id="2_x6hko"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="4_pjpli"]
+[ext_resource type="PackedScene" uid="uid://6ddcqvqxag6c" path="res://SCENES/UTILITIES/UI/MINIGAMES/TEMPLATE_STRAND/codon.tscn" id="5_mik03"]
+[ext_resource type="PackedScene" uid="uid://bvycm4xn0ihff" path="res://SCENES/UTILITIES/UI/MINIGAMES/TEMPLATE_STRAND/nitrogen_base_buttons.tscn" id="6_x6hko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyfbk"]
+atlas = ExtResource("2_c1fjh")
+region = Rect2(388, 224, 721, 299)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6hko"]
+atlas = ExtResource("4_pjpli")
+region = Rect2(4113, 1807, 193, 992)
+
+[node name="BASE_PARING_MINIGAME" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hscd0")
+DNA_TEMPLATE = ExtResource("2_x6hko")
+
+[node name="BASE_CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+layout_mode = 0
+offset_left = 41.0
+offset_top = 95.0
+offset_right = 1238.0
+offset_bottom = 683.0
+theme = ExtResource("1_uhf00")
+
+[node name="DNA_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.5
+offset_top = -129.0
+offset_right = 326.5
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CODON_SHADOW" type="TextureRect" parent="BASE_CONTAINER/DNA_CONTAINER"]
+self_modulate = Color(0, 0, 0, 0.76862746)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.5
+offset_top = -122.25
+offset_right = 491.5
+offset_bottom = 176.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_lyfbk")
+
+[node name="Label" type="Label" parent="BASE_CONTAINER/DNA_CONTAINER"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 27.0
+offset_right = 394.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 30
+text = "CODON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CODON" parent="BASE_CONTAINER/DNA_CONTAINER" node_paths=PackedStringArray("nb_buttons") instance=ExtResource("5_mik03")]
+layout_mode = 0
+offset_left = 80.99999
+offset_top = 56.999996
+offset_right = 802.0
+offset_bottom = 356.0
+nb_buttons = NodePath("../../../NITROGEN_BASE_BUTTONS")
+
+[node name="MRNA_CONTAINER" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -568.5
+offset_top = -266.0
+offset_right = 572.5
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="BASE_CONTAINER/MRNA_CONTAINER"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 25.0
+offset_right = 785.0
+offset_bottom = 96.0
+theme_override_constants/h_separation = 20
+columns = 4
+
+[node name="Label2" type="Label" parent="BASE_CONTAINER/MRNA_CONTAINER"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 42.0
+offset_right = 1114.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 30
+text = "<- MRNA STRAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DNA_CONTAINER3" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 345.5
+offset_top = -129.0
+offset_right = 572.5
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEMPLATE_STRAND_SHADOW" type="TextureRect" parent="BASE_CONTAINER/DNA_CONTAINER3"]
+self_modulate = Color(0, 0, 0, 0.58431375)
+layout_mode = 0
+offset_left = 34.000122
+offset_top = 78.0
+offset_right = 227.00012
+offset_bottom = 1070.0
+rotation = -0.2617994
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_x6hko")
+
+[node name="TEMPLATE_STRAND" type="TextureRect" parent="BASE_CONTAINER/DNA_CONTAINER3"]
+layout_mode = 0
+offset_left = 43.999996
+offset_top = 54.999996
+offset_right = 237.0
+offset_bottom = 1047.0
+rotation = -0.2617994
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_x6hko")
+
+[node name="Label2" type="Label" parent="BASE_CONTAINER/DNA_CONTAINER3"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 47.0
+offset_right = 381.0
+offset_bottom = 83.0
+rotation = 1.3089969
+theme_override_font_sizes/font_size = 20
+text = "DNA TEMPLATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BUTTONS" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -131.0
+offset_right = 259.0
+offset_bottom = 259.0
+grow_vertical = 2
+
+[node name="CHECK PAIR" type="Button" parent="BASE_CONTAINER/BUTTONS"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 263.0
+offset_right = 198.0
+offset_bottom = 354.0
+text = "CHECK PAIR"
+autowrap_mode = 3
+
+[node name="ATP" type="Label" parent="BASE_CONTAINER/BUTTONS"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 198.0
+offset_bottom = 66.0
+text = "ATP:"
+vertical_alignment = 1
+
+[node name="CODON_PAIRED" type="Label" parent="BASE_CONTAINER/BUTTONS"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 74.0
+offset_right = 178.0
+offset_bottom = 115.0
+text = "CODON PAIRED:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CODON_PAIR" type="Button" parent="BASE_CONTAINER/BUTTONS"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 153.0
+offset_right = 189.0
+offset_bottom = 224.0
+tooltip_text = "WHAT IS THE CODON PAIR?"
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "AAA"
+
+[node name="TITLE" type="Panel" parent="BASE_CONTAINER"]
+self_modulate = Color(3.85046e-07, 0.423831, 0.28398696, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -389.0
+offset_top = -87.0
+offset_right = 389.0
+offset_bottom = -6.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="BASE_CONTAINER/TITLE"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -9.5
+offset_right = 120.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "BASE PARING MINIGAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CLOSE" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 80.0
+offset_right = 68.0
+offset_bottom = 117.0
+theme = ExtResource("1_uhf00")
+text = "X
+"
+autowrap_mode = 3
+
+[node name="NITROGEN_BASE_BUTTONS" parent="." instance=ExtResource("6_x6hko")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 340.0
+offset_top = 567.0
+offset_right = 942.0
+offset_bottom = 767.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="gui_input" from="BASE_CONTAINER/DNA_CONTAINER3/TEMPLATE_STRAND" to="." method="_on_template_strand_gui_input"]
+[connection signal="pressed" from="BASE_CONTAINER/BUTTONS/CHECK PAIR" to="." method="_on_check_pair_pressed"]
+[connection signal="pressed" from="CLOSE" to="." method="_on_close_pressed"]

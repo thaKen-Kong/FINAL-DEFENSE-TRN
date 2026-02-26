@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn652gloniy07"]
+
+[ext_resource type="Script" uid="uid://bdh344sq02nq3" path="res://SCRIPTS/UTILITIES/UI/pause_screen.gd" id="1_p5aku"]
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_ycnyo"]
+
+[node name="PauseScreen" type="Control" node_paths=PackedStringArray("background_screen", "base")]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_ycnyo")
+script = ExtResource("1_p5aku")
+background_screen = NodePath("ColorRect")
+base = NodePath("Base")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27058825)
+
+[node name="Base" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.5
+offset_top = -208.0
+offset_right = 192.5
+offset_bottom = 208.00092
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Base"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 34.0
+offset_right = 133.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "GAME PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Base"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -98.0
+offset_right = 112.625
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="resume" type="Button" parent="Base/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "RESUME"
+
+[node name="settings" type="Button" parent="Base/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "SETTINGS
+"
+
+[node name="restart" type="Button" parent="Base/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "RESTART"
+
+[node name="go_to_lobby" type="Button" parent="Base/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "GO TO LOBBY"
+
+[node name="saveandexit" type="Button" parent="Base/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "SAVE AND EXIT"
+
+[connection signal="pressed" from="Base/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Base/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Base/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Base/VBoxContainer/go_to_lobby" to="." method="_on_go_to_lobby_pressed"]
+[connection signal="pressed" from="Base/VBoxContainer/saveandexit" to="." method="_on_saveandexit_pressed"]

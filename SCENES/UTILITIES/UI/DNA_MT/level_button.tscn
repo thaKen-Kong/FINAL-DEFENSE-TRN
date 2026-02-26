@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dx0bvmgrjkdkm"]
+
+[ext_resource type="Script" uid="uid://c2l1deecybhmw" path="res://SCRIPTS/UTILITIES/UI/DNA_MT/level_button.gd" id="1_0qqwk"]
+
+[node name="level 1" type="Button" unique_id=171770208]
+custom_minimum_size = Vector2(0, 60)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_0qqwk")

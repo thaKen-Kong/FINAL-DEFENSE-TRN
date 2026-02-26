@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://gs8t0tl2fqlm"]
+
+[ext_resource type="Script" uid="uid://d1im624mlveck" path="res://SCRIPTS/UTILITIES/INTERACTION_OBJECT/clickable_interaction_area.gd" id="1_hcaw4"]
+
+[node name="ClickableInteractionArea" type="Area2D" unique_id=1390119566]
+rotation = -0.0064791543
+collision_layer = 8
+collision_mask = 34
+script = ExtResource("1_hcaw4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,129 @@
+[gd_scene load_steps=21 format=3 uid="uid://bv5oje4fq6tsf"]
+
+[ext_resource type="Script" uid="uid://dowl04rakfc1h" path="res://SCRIPTS/OBJECTS/GAME_LEVEL_OBJECTS/dna_object.gd" id="1_g86x6"]
+[ext_resource type="PackedScene" uid="uid://biuu8trfvsvdq" path="res://SCENES/WORLD_OBJECT/OBJ/rna_polymerase.tscn" id="2_74wir"]
+[ext_resource type="PackedScene" uid="uid://c111pefwpuin7" path="res://SCENES/UTILITIES/UI/MINIGAMES/pre_initiation_minigame.tscn" id="2_qx3aw"]
+[ext_resource type="Texture2D" uid="uid://bvl0ovb44jxj8" path="res://ASSETS/rush/Untitled43_20260105180103.png" id="2_w7t86"]
+[ext_resource type="PackedScene" uid="uid://djvjryggo8v5e" path="res://SCENES/WORLD_OBJECT/OBJ/incomplete_mrna.tscn" id="3_fkb0k"]
+[ext_resource type="Texture2D" uid="uid://dwjeih7o4fhke" path="res://ASSETS/rush/Untitled50_20260108181446.png" id="3_hwadn"]
+[ext_resource type="PackedScene" uid="uid://2gp8ktkjk2sr" path="res://SCENES/UTILITIES/UI/MINIGAMES/initiation_minigame.tscn" id="4_6c47j"]
+[ext_resource type="PackedScene" uid="uid://dwvbwr3vp1l4q" path="res://SCENES/WORLD_OBJECT/OBJ/PACKAGED_MRNA.tscn" id="4_e1ywu"]
+[ext_resource type="PackedScene" uid="uid://gs8t0tl2fqlm" path="res://SCENES/UTILITIES/INTERACTION OBJECT/clickable_interaction_area.tscn" id="4_hwadn"]
+[ext_resource type="PackedScene" uid="uid://buygyih4jpaa1" path="res://SCENES/UTILITIES/UI/MINIGAMES/termination_minigame.tscn" id="5_wl4yf"]
+[ext_resource type="PackedScene" uid="uid://dadnbbiinklys" path="res://SCENES/WORLD_OBJECT/OBJ/object_drop_area.tscn" id="6_0sqjq"]
+[ext_resource type="PackedScene" uid="uid://bqan4nojo26rd" path="res://SCENES/UTILITIES/UI/MINIGAMES/rnap_paused.tscn" id="8_pmd8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7t86"]
+size = Vector2(815, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sqjq"]
+atlas = ExtResource("3_hwadn")
+region = Rect2(27.072716, 56.42981, 889.0022, 234.5354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3aw"]
+atlas = ExtResource("2_w7t86")
+region = Rect2(955, 4080, 2804, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx3aw"]
+size = Vector2(2855.0957, 381.88184)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74wir"]
+radius = 137.0146
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74wir"]
+atlas = ExtResource("2_w7t86")
+region = Rect2(4056, 872, 280, 376)
+
+[sub_resource type="Curve2D" id="Curve2D_6c47j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1227, 2, 0, 0, 0, 0, 1205, 0)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl4yf"]
+atlas = ExtResource("2_w7t86")
+region = Rect2(4097, 511, 217, 277)
+
+[node name="DNA_OBJECT" type="StaticBody2D" groups=["dna"]]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_g86x6")
+rnap = ExtResource("2_74wir")
+inc_mrna_object = ExtResource("3_fkb0k")
+mrna_object = ExtResource("4_e1ywu")
+pre_initiation_minigame_scene = ExtResource("2_qx3aw")
+initiation_minigame_scene = ExtResource("4_6c47j")
+termination_minigame_scene = ExtResource("5_wl4yf")
+key_sequence = ExtResource("8_pmd8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 141)
+shape = SubResource("RectangleShape2D_w7t86")
+
+[node name="DNA_SHADOW" type="Sprite2D" parent="."]
+position = Vector2(-4, 189)
+scale = Vector2(3.5929117, 1)
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW3" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW5" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW6" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SHADOW4" type="Sprite2D" parent="DNA_SHADOW"]
+texture = SubResource("AtlasTexture_0sqjq")
+
+[node name="DNA_SPRITE" type="Node2D" parent="."]
+
+[node name="DNA_SHADOW2" type="Sprite2D" parent="DNA_SPRITE"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1, 220)
+texture = SubResource("AtlasTexture_qx3aw")
+offset = Vector2(0, -200)
+
+[node name="DNA_SPRITE" type="Sprite2D" parent="DNA_SPRITE"]
+position = Vector2(1, 200)
+texture = SubResource("AtlasTexture_qx3aw")
+offset = Vector2(0, -200)
+
+[node name="ClickableInteractionArea" parent="." instance=ExtResource("4_hwadn")]
+action_name = "START PRE-INITIATION"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea"]
+position = Vector2(-2.525866, 3.9513142)
+shape = SubResource("RectangleShape2D_qx3aw")
+
+[node name="OBJECT_DROP_AREA" parent="." instance=ExtResource("6_0sqjq")]
+position = Vector2(-1228, 6)
+drop_area_name = "PROMOTER REGINO"
+accepted_object_name = "RNAP2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OBJECT_DROP_AREA"]
+shape = SubResource("CircleShape2D_74wir")
+
+[node name="Sprite2D" type="Sprite2D" parent="OBJECT_DROP_AREA"]
+texture = SubResource("AtlasTexture_74wir")
+
+[node name="ELONGATION_PATH" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6c47j")
+
+[node name="RNA_P_PATH_FOLLOW" type="PathFollow2D" parent="ELONGATION_PATH"]
+position = Vector2(-1227, 2)
+rotation = -0.00082236825
+
+[node name="RNA_ELONGATION" type="Sprite2D" parent="ELONGATION_PATH/RNA_P_PATH_FOLLOW"]
+z_index = 1
+texture = SubResource("AtlasTexture_wl4yf")
+
+[node name="ELONGATION_PROGRESS" type="ProgressBar" parent="ELONGATION_PATH/RNA_P_PATH_FOLLOW/RNA_ELONGATION"]
+offset_left = -88.12415
+offset_top = 150.9276
+offset_right = 95.31786
+offset_bottom = 177.9276
+max_value = 1.0
+show_percentage = false

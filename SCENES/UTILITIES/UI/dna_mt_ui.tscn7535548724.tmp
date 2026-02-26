@@ -1,0 +1,254 @@
+[gd_scene load_steps=6 format=3 uid="uid://7jb1paxkwtr3"]
+
+[ext_resource type="Theme" uid="uid://dq1or1vk0obv4" path="res://ASSETS/Themes/def_theme.tres" id="1_gkrrx"]
+[ext_resource type="Script" uid="uid://n6cgqiq4dtlu" path="res://SCRIPTS/UTILITIES/UI/dna_mt_ui.gd" id="1_saond"]
+[ext_resource type="Script" uid="uid://deqitwxfsa3oy" path="res://SCRIPTS/RESOURCES/leveldata.gd" id="4_aaw3d"]
+[ext_resource type="PackedScene" uid="uid://dx0bvmgrjkdkm" path="res://SCENES/UTILITIES/UI/DNA_MT/level_button.tscn" id="4_p5b56"]
+
+[sub_resource type="Resource" id="Resource_p5b56"]
+script = ExtResource("4_aaw3d")
+metadata/_custom_type_script = "uid://deqitwxfsa3oy"
+
+[node name="DNA_MT_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gkrrx")
+script = ExtResource("1_saond")
+level_data = SubResource("Resource_p5b56")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27058825)
+
+[node name="LEVEL CONTAINER" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.25
+offset_top = -228.0
+offset_right = 73.75
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LEVELS" type="Panel" parent="LEVEL CONTAINER"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -231.5
+offset_right = 273.0
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LABEL" type="Label" parent="LEVEL CONTAINER/LEVELS"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 40.0
+offset_right = 91.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "MISSIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LEVEL CONTAINER/LEVELS"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.75
+offset_top = -149.0
+offset_right = 249.25
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LEVEL CONTAINER/LEVELS/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="level 1" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 2" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 3" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 4" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 5" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 6" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 7" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 8" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="level 9" parent="LEVEL CONTAINER/LEVELS/ScrollContainer/VBoxContainer" instance=ExtResource("4_p5b56")]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="LEVEL CONTAINER"]
+layout_mode = 0
+offset_left = -6.75
+offset_top = -5.0
+offset_right = 35.25
+offset_bottom = 34.0
+tooltip_text = "CLOSE"
+theme_override_colors/font_color = Color(0.99999994, 0.051255472, 0.40907657, 1)
+text = "X"
+
+[node name="LEVEL DETAIL" type="Panel" parent="."]
+self_modulate = Color(0, 0.627451, 0.36078432, 1)
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = -229.0
+offset_right = 520.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEXT CONTAINER" type="Panel" parent="LEVEL DETAIL"]
+self_modulate = Color(0, 0.29411766, 0.19215687, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -237.0
+offset_right = 172.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TITLE2" type="Label" parent="LEVEL DETAIL/TEXT CONTAINER"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_top = 30.0
+offset_right = 156.5
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "MISSION DETAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LEVEL DETAIL/TEXT CONTAINER"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 84.0
+offset_right = 315.0
+offset_bottom = 371.0
+theme_override_constants/separation = 20
+
+[node name="REWARD" type="Label" parent="LEVEL DETAIL/TEXT CONTAINER/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "REWARD :"
+vertical_alignment = 1
+
+[node name="TIMER" type="Label" parent="LEVEL DETAIL/TEXT CONTAINER/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "TIMER :"
+vertical_alignment = 1
+
+[node name="DIFF" type="Label" parent="LEVEL DETAIL/TEXT CONTAINER/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DIFFICULTY :"
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="LEVEL DETAIL"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -117.0
+offset_right = 114.5
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "START LEVEL"
+
+[node name="TITLE CONTAINER" type="Panel" parent="."]
+self_modulate = Color(3.6820024e-06, 0.4897017, 0.27686054, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.5
+offset_top = 23.0
+offset_right = 266.5
+offset_bottom = 121.0
+grow_horizontal = 2
+
+[node name="TITLE" type="Label" parent="TITLE CONTAINER"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45083135
+anchor_top = -0.1467803
+anchor_right = 0.52304035
+anchor_bottom = -0.114583336
+offset_left = -62.5943
+offset_top = 44.384468
+offset_right = 69.84372
+offset_bottom = 77.229164
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "DNA MISSION TERMINAL"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="LEVEL CONTAINER/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="LEVEL DETAIL/Start" to="." method="_on_start_pressed"]

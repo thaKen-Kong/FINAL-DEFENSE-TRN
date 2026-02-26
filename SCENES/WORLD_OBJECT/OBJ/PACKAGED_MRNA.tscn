@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dwvbwr3vp1l4q"]
+
+[ext_resource type="PackedScene" uid="uid://d1n8ch4bkah52" path="res://SCENES/WORLD_OBJECT/OBJ/object.tscn" id="1_nyasc"]
+[ext_resource type="Texture2D" uid="uid://b4ny7ojl8dfqm" path="res://ASSETS/world/Assets/packaged box close.png" id="2_jjjf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq8bx"]
+atlas = ExtResource("2_jjjf1")
+region = Rect2(337, 594, 799, 911)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jjjf1"]
+radius = 133.13527
+
+[sub_resource type="Animation" id="Animation_iq8bx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OBJECT_SPRITE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OBJECT_SPRITE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_jjjf1"]
+resource_name = "play"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OBJECT_SPRITE:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.018333334, -0.01666667, 0, 0, 1e-05, -0.04833334, 0.04999833, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OBJECT_SPRITE:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.018333334, -0.01666667, 0, 0, 1e-05, -0.04833334, 0.04999833, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndawy"]
+_data = {
+&"RESET": SubResource("Animation_iq8bx"),
+&"play": SubResource("Animation_jjjf1")
+}
+
+[node name="Object" unique_id=1945818276 instance=ExtResource("1_nyasc")]
+object_name = "MRNA"
+grab_action = "GRAB MESSENGER RNA"
+drop_action = "DROP MESSENGER RNA "
+
+[node name="OBJECT_SPRITE" parent="." index="1"]
+position = Vector2(3.0000017, 16.999996)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("AtlasTexture_iq8bx")
+
+[node name="ClickableInteractionArea" parent="." index="3"]
+action_name = "GRAB MESSENGER RNA"
+object_name = "MRNA"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea" index="0" unique_id=1736456123]
+shape = SubResource("CircleShape2D_jjjf1")
+
+[node name="AnimationPlayer" parent="." index="4"]
+libraries/ = SubResource("AnimationLibrary_ndawy")

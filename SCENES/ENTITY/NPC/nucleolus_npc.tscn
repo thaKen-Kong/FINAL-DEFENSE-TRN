@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dqb4rq3n2nnug"]
+
+[ext_resource type="Texture2D" uid="uid://chwqtrvahoiyd" path="res://ASSETS/world/Assets/Nucleolus.png" id="1_3v5p7"]
+[ext_resource type="Script" uid="uid://255sglr6egda" path="res://SCRIPTS/ENTITY/NPC/nucleolus_npc.gd" id="1_4dxrm"]
+[ext_resource type="Resource" uid="uid://hvgqxcscdq6j" path="res://MISC/untitled.dialogue" id="2_lqam4"]
+[ext_resource type="PackedScene" uid="uid://gs8t0tl2fqlm" path="res://SCENES/UTILITIES/INTERACTION OBJECT/clickable_interaction_area.tscn" id="4_xid10"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dxrm"]
+atlas = ExtResource("1_3v5p7")
+region = Rect2(2, 3, 134, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v5p7"]
+atlas = ExtResource("1_3v5p7")
+region = Rect2(24, 136, 101, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqam4"]
+atlas = ExtResource("1_3v5p7")
+region = Rect2(144, 51, 35, 113)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o1u8t"]
+radius = 127.141655
+
+[node name="NucleolusNPC" type="CharacterBody2D" unique_id=1951106301 node_paths=PackedStringArray("interaction_area")]
+script = ExtResource("1_4dxrm")
+dialogue = ExtResource("2_lqam4")
+interaction_area = NodePath("ClickableInteractionArea")
+
+[node name="BODY" type="Sprite2D" parent="." unique_id=1791899216]
+texture = SubResource("AtlasTexture_4dxrm")
+
+[node name="EYE" type="Sprite2D" parent="BODY" unique_id=1778192304]
+position = Vector2(0, -11)
+texture = SubResource("AtlasTexture_3v5p7")
+
+[node name="SHADOW" type="Sprite2D" parent="BODY" unique_id=2140800251]
+position = Vector2(-1, 85)
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_lqam4")
+
+[node name="ClickableInteractionArea" parent="." unique_id=1286148738 instance=ExtResource("4_xid10")]
+action_name = "TALK"
+object_name = "NUCLEOLUS"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableInteractionArea" unique_id=291290398]
+shape = SubResource("CircleShape2D_o1u8t")
